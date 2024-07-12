@@ -13,6 +13,7 @@ html, body {
 }
 .popupnavigationcontainer {
     display: none;
+    color: white;
 }
 
 .contentcontainer {
@@ -488,6 +489,7 @@ a {
 
     .popupnavigationcontainer.active {
         display: flex; /* Show the popup navigation when active */
+        color: white;
     }
 
     .popupnavigationcontainer > .popupnavigation {
