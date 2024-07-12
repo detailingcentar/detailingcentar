@@ -554,16 +554,15 @@ a {
     .container4 {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
+        margin-top: 225px;
         padding: 10px;
-        height: auto;
-        width: 100%; /* Ensure container takes full width */
+        width: 100%;
     }
 
     .card2 {
         width: 80%;
         margin-bottom: 20px;
-        padding: 5px;
         height: 250px;
     }
 
