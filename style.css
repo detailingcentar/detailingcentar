@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+html, body {
+    overflow-x: hidden;
+    background-color: rgb(43, 43, 43);
+    scroll-behavior: smooth;
+}
+.popupnavigationcontainer {
+    display: none;
+}
+
+.contentcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container1 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Double the width for smooth continuous movement */
+    height: 150%;
+    background-image: url('pozadina.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: moveBackground 20s linear infinite; /* Adjust duration and timing */
+}
+
+.bodycontainer {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 80px;
+}
+
+
+@keyframes moveBackground {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.container1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.39);
+    z-index: 0;
+}
+
+.headercontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Higher z-index to be on top of the overlay */
+    background: rgba(0, 0, 0, 0.45); /* Optional: semi-transparent background for the nav bar */
+}
+
+.navigacija {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly around items */
+    list-style: none; /* Remove bullet points */
+    padding: 1rem 0; /* Vertical padding */
+    border-radius: 25px;
+    margin: 0; /* Remove default margin */
+}
+
+.navigacija li {
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px; /* Add padding to increase clickable area */
+    transition: color 0.3s; /* Smooth transition for color change */
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.navigacija li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: white; /* Same color as the text for consistency */
+    transition: left 0.5s, right 0.5s; /* Smooth transitions for the pseudoelement */
+}
+
+.navigacija li:hover::after {
+    left: 0;
+    right: 0; /* Expand the pseudoelement to full width on hover */
+}
+
+.navigacija li:hover {
+    color: #f0f0f0; /* Slightly change the color on hover for better effect */
+    font-weight: bold;
+}
+
+.navigacija li a {
+    color: white; /* Set the color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.bodytextcontent {
+    text-align: center; 
+    text-shadow: 1.5px 1.5px 7.5px rgb(0, 0, 0);
+    color: white;
+    z-index: 3;
+    animation: slideUpFadeIn 2s ease-out forwards;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(43, 43, 43);
+    gap: 20px;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: rgb(94, 94, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card > .tekst > h1 {
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 0.5px 0.5px 4px black;
+}
+.card > .tekst > p {
+    color: whitesmoke;
+    text-shadow: 0px 0px 1.5px black;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 8px white;
+    transform: scale(1.015);
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit; /* Ensures the text color is inherited from the parent element */
+}
+
+a {
+    text-decoration: none;
+}
+
+.slika {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#logo {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('logo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+    animation: borderAnimation 2.5s infinite;
+}
+
+#logo:hover {
+    box-shadow: 0px 0px 0px white;
+    transform: scale(1);
+    cursor: auto;
+}
+
+.usluge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100dvw;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+}
+
+.container3 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.helper-container3 {
+    width: 95%;
+    height: 90%;
+    /* background-color: rgb(65, 65, 65);
+    box-shadow: 0px 0px 20px rgb(145, 145, 145); */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    
+}
+
+.pre-nakon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pre_nakon_tekst {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 24px;
+}
+
+.pre-nakon-slike {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+    background-image: url('slike/slika1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+
+.o-nama {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.o-nama > h1 {
+    font-weight: bold;
+}
+
+.o-nama > p {
+    width: 80%;
+    margin-top: 35px;
+}
+
+.container4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.card2 {
+    width: 30%;
+    background-color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    height: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card2 h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 0px 0px 2px rgb(163, 163, 163);
+}
+
+.card2 p {
+    color: #666;
+    font-size: 20px;
+}
+
+.card2:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 0px 4px rgb(255, 255, 255);
+}
+
+.maliAuto, .srednjiAuto, .velikiAuto {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.clicked {
+    background-color: #919191; /* Change background color when clicked */
+}
+
+.clicked > p {
+    color: white;
+}
+
+#cenovnik {
+    margin-bottom: -175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+    font-size: 0.9em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+.popup-button {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFadeIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes borderAnimation {
+    0% {
+        border: 5px solid rgb(105, 105, 105);
+    }
+    25% {
+        border: 5px solid rgb(229, 229, 229);
+    }
+    50% {
+        border: 5px solid rgb(46, 46, 46);
+    }
+    75% {
+        border: 5px solid rgb(255, 255, 255);
+    }
+    100% {
+        border: 5px solid rgb(105, 103, 103);
+    }
+}
+
+@media (max-width: 750px) {
+
+    .popup-button {
+        display: block;
+    }
+
+    .usluge {
+        margin-top: 45px;
+    }
+
+    .bodytextcontent{
+        font-size: 64px;
+    }
+
+    .headercontainer {
+        display: none;
+    }
+    .popupnavigationcontainer {
+        display: none;
+        padding: 10px;
+        position: fixed;
+        flex-direction: column;
+        align-items: end;
+        background-color: rgb(55, 55, 55);
+        border: 2px solid white;
+        border-radius: 0px 10px 10px 0px;
+        z-index: 999;
+    }
+
+    .popupnavigationcontainer.active {
+        display: flex; /* Show the popup navigation when active */
+    }
+
+    .popupnavigationcontainer > .popupnavigation {
+        list-style: none;
+    } 
+    
+    .popupnavigationcontainer > .popupnavigation li {
+        color: white !important;
+        font-size: 1.2rem;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 2px solid black;
+        padding: 10px 20px; /* Add padding to increase clickable area */
+        transition: color 0.3s; /* Smooth transition for color change */
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .container2 {
+        display: grid; /* Use grid layout */
+        height: auto; /* Adjust height to auto to fit the content */
+        width: 70vw; /* Make the container width more responsive */
+        padding: 20px;
+        grid-template-columns: repeat(2, 1fr); /* Create 3 columns */
+        grid-template-rows: repeat(3, auto); /* Create 2 rows */
+        gap: 10px; /* Add space between grid items */
+    }
+    
+    #logo {
+        display: none;
+    }
+
+    .card {
+        background-color: rgb(94, 94, 94);
+        border-radius: 15px;
+        margin-bottom: 20px;
+        width: 100%; /* Make cards take the full width of the container */
+        padding: 25px; /* Adjust padding for better spacing */
+    }
+
+    .card.dubinsko {
+        grid-column: span 2; /* Span across both columns */
+    }
+    
+    .card > .tekst > h1 {
+        margin-bottom: 12px;
+        color: white;
+        text-shadow: 0.5px 0.5px 2px black;
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .card > .tekst > p {
+        color: whitesmoke;
+        text-shadow: 0px 0px 1px black;
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+    
+    .card:hover {
+        box-shadow: 0px 0px 0px white;
+        transform: scale(1);
+    }
+
+    .container4 {
+        display: flex;
+        flex-wrap: wrap; 
+        padding: 10px;
+        height: auto;
+        width: 100%; /* Ensure container takes full width */
+    }
+
+    .card2 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #cenovnik {
+        margin-bottom: 0; /* Remove negative margin */
+        display: block; /* Ensure proper display */
+        padding: 20px;
+        width: 100%; /* Ensure full width */
+        text-align: center;
+    }
+
+    /* Additional media query styles for responsive behavior */
+    .headercontainer {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 580px) {
+    .usluge {
+        display: none;
+        /* margin-top: 45px; */
+    }
+
+    .bodytextcontent{
+        font-size: 48px;
+    }
+
+    .container2 {
+        display: block;
+        height: auto;
+        width: 85vw;
+        padding: 20px;
+        margin-bottom: 20px; /* Add margin bottom to create space between container2 and container4 */
+    }
+
+    .card {
+        background-color: rgb(94, 94, 94);
+        border-radius: 15px;
+        margin-bottom: 20px;
+        width: 100%;
+        min-height: 220px;
+        padding: 5px;
+    }
+
+    .card > .tekst > h1 {
+        margin-bottom: 12px;
+        color: white;
+        text-shadow: 0.5px 0.5px 2px black;
+        font-size: 1.5rem;
+    }
+
+    .card > .tekst > p {
+        color: whitesmoke;
+        text-shadow: 0px 0px 1px black;
+        font-size: 1rem;
+    }
+
+    .container4 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 225px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .card2 {
+        width: 80%;
+        margin-bottom: 20px;
+        padding: 5px;
+        height: 220px;
+    }
+
+    #cenovnik {
+      display: none;
+    }
+}
