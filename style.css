@@ -553,6 +553,7 @@ a {
 
     .container4 {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap; 
         padding: 10px;
         height: auto;
@@ -562,6 +563,8 @@ a {
     .card2 {
         width: 80%;
         margin-bottom: 20px;
+        padding: 5px;
+        height: 250px;
     }
 
     #cenovnik {
